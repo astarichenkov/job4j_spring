@@ -8,6 +8,9 @@ public class SpringDI {
         context.scan("ru.job4j.di");
         context.refresh();
         StartUI ui = context.getBean(StartUI.class);
-        ui.askStr("console");
+        ui.add("first");
+        StartUI secondUi = context.getBean(StartUI.class);
+        secondUi.add("second");
+        secondUi.print();
     }
 }
